@@ -1,0 +1,26 @@
+{
+  "name": "desarrollo-ucc",
+  "version": "1.0.0",
+  "description": "POS UCC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev":"concurrently \"npm run server\" \"npm run client\" ",
+    "seed": "node seeder.js"
+
+  },
+  "author": "cmarquinez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22"
+  }
+}
