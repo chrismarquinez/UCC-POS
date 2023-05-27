@@ -29,15 +29,15 @@ const CutomerPage = () => {
   const columns = [
     { title: "ID ", dataIndex: "_id" },
     {
-      title: "Cutomer Name",
+      title: "Nombre Cliente",
       dataIndex: "customerName",
     },
-    { title: "Contact No", dataIndex: "customerNumber" },
+    { title: "Contacto Cliente", dataIndex: "customerNumber" },
   ];
 
   return (
     <DefaultLayout>
-      <h1>Cutomer Page</h1>
+      <h1>Lista Clientes</h1>
       <Table
         columns={columns}
         dataSource={billsData}

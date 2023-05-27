@@ -6,18 +6,18 @@ import { useDispatch } from "react-redux";
 import ItemList from "../components/ItemList";
 const Homepage = () => {
   const [itemsData, setItemsData] = useState([]);
-  const [selecedCategory, setSelecedCategory] = useState("drinks");
+  const [selecedCategory, setSelecedCategory] = useState("Bebida");
   const categories = [
     {
-      name: "drinks",
+      name: "Bebida",
       imageUrl: "https://cdn-icons-png.flaticon.com/512/430/430561.png",
     },
     {
-      name: "rice",
+      name: "Arroz",
       imageUrl: "https://cdn-icons-png.flaticon.com/512/3174/3174880.png",
     },
     {
-      name: "noodles",
+      name: "Sopa",
       imageUrl: "https://cdn-icons-png.flaticon.com/512/1471/1471262.png",
     },
   ];

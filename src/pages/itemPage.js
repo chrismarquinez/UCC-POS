@@ -49,18 +49,18 @@ const ItemPage = () => {
 
   //able data
   const columns = [
-    { title: "Name", dataIndex: "name" },
+    { title: "Nombre", dataIndex: "name" },
     {
-      title: "Image",
+      title: "Imagen",
       dataIndex: "image",
       render: (image, record) => (
         <img src={image} alt={record.name} height="60" width="60" />
       ),
     },
-    { title: "Price", dataIndex: "price" },
+    { title: "Precio", dataIndex: "price" },
 
     {
-      title: "Actions",
+      title: "Acciones",
       dataIndex: "_id",
       render: (id, record) => (
         <div>
@@ -123,9 +123,9 @@ const ItemPage = () => {
   return (
     <DefaultLayout>
       <div className="d-flex justify-content-between">
-        <h1>Item List</h1>
+        <h1>Lista De Articulos </h1>
         <Button type="primary" onClick={() => setPopupModal(true)}>
-          Add Item
+          Agregar Articulo
         </Button>
       </div>
 
@@ -133,7 +133,7 @@ const ItemPage = () => {
 
       {popupModal && (
         <Modal
-          title={`${editItem !== null ? "Edit Item " : "Add New Item"}`}
+          title={`${editItem !== null ? "Editar Articulo " : "Agregar Articulo"}`}
           visible={popupModal}
           onCancel={() => {
             setEditItem(null);
@@ -146,26 +146,26 @@ const ItemPage = () => {
             initialValues={editItem}
             onFinish={handleSubmit}
           >
-            <Form.Item name="name" label="Name">
+            <Form.Item name="name" label="Nombre">
               <Input />
             </Form.Item>
-            <Form.Item name="price" label="Price">
+            <Form.Item name="price" label="Precio">
               <Input />
             </Form.Item>
-            <Form.Item name="image" label="Image URL">
+            <Form.Item name="image" label="Imagen URL">
               <Input />
             </Form.Item>
-            <Form.Item name="category" label="Category">
+            <Form.Item name="category" label="Categoria">
               <Select>
-                <Select.Option value="drinks">Drinks</Select.Option>
-                <Select.Option value="rice">Rice</Select.Option>
-                <Select.Option value="noodles">Noodels</Select.Option>
+                <Select.Option value="Bebida">Bebida</Select.Option>
+                <Select.Option value="Arroz">Arroz</Select.Option>
+                <Select.Option value="Sopa">Sopa</Select.Option>
               </Select>
             </Form.Item>
 
             <div className="d-flex justify-content-end">
               <Button type="primary" htmlType="submit">
-                SAVE
+                Guardar
               </Button>
             </div>
           </Form>

@@ -40,16 +40,16 @@ const BillsPage = () => {
   const columns = [
     { title: "ID ", dataIndex: "_id" },
     {
-      title: "Cutomer Name",
+      title: "Nombre Cliente",
       dataIndex: "customerName",
     },
-    { title: "Contact No", dataIndex: "customerNumber" },
+    { title: "Telefono Cliente", dataIndex: "customerNumber" },
     { title: "Subtotal", dataIndex: "subTotal" },
-    { title: "Tax", dataIndex: "tax" },
-    { title: "Total Amount", dataIndex: "totalAmount" },
+    { title: "Iva", dataIndex: "tax" },
+    { title: "Total ", dataIndex: "totalAmount" },
 
     {
-      title: "Actions",
+      title: "Acciones",
       dataIndex: "_id",
       render: (id, record) => (
         <div>
@@ -68,7 +68,7 @@ const BillsPage = () => {
   return (
     <DefaultLayout>
       <div className="d-flex justify-content-between">
-        <h1>Invoice list</h1>
+        <h1>Lista De Facturas</h1>
       </div>
 
       <Table columns={columns} dataSource={billsData} bordered />
@@ -77,7 +77,7 @@ const BillsPage = () => {
         <Modal
           width={400}
           pagination={false}
-          title="Invoice Details"
+          title="Detalle factura"
           visible={popupModal}
           onCancel={() => {
             setPopupModal(false);
@@ -89,8 +89,8 @@ const BillsPage = () => {
             <center id="top">
               <div className="logo" />
               <div className="info">
-                <h2>Techinfo YT POS</h2>
-                <p> Contact : 123456 | Mumbai Maharashtra</p>
+                <h2>SYSPOS</h2>
+                <p> Contact0 : 3108640322 | SYSPOS UCC</p>
               </div>
               {/*End Info*/}
             </center>
@@ -98,11 +98,11 @@ const BillsPage = () => {
             <div id="mid">
               <div className="mt-2">
                 <p>
-                  Customer Name : <b>{selectedBill.customerName}</b>
+                  Nombre Cliente : <b>{selectedBill.customerName}</b>
                   <br />
-                  Phone No : <b>{selectedBill.customerNumber}</b>
+                  Telefono : <b>{selectedBill.customerNumber}</b>
                   <br />
-                  Date : <b>{selectedBill.date.toString().substring(0, 10)}</b>
+                  Fecha : <b>{selectedBill.date.toString().substring(0, 10)}</b>
                   <br />
                 </p>
                 <hr style={{ margin: "5px" }} />
@@ -115,13 +115,13 @@ const BillsPage = () => {
                   <tbody>
                     <tr className="tabletitle">
                       <td className="item">
-                        <h2>Item</h2>
+                        <h2>Articulo</h2>
                       </td>
                       <td className="Hours">
-                        <h2>Qty</h2>
+                        <h2>Cantidad</h2>
                       </td>
                       <td className="Rate">
-                        <h2>Price</h2>
+                        <h2>Precio</h2>
                       </td>
                       <td className="Rate">
                         <h2>Total</h2>
@@ -152,7 +152,7 @@ const BillsPage = () => {
                       <td />
                       <td />
                       <td className="Rate">
-                        <h2>tax</h2>
+                        <h2>Iva</h2>
                       </td>
                       <td className="payment">
                         <h2>${selectedBill.tax}</h2>
@@ -162,7 +162,7 @@ const BillsPage = () => {
                       <td />
                       <td />
                       <td className="Rate">
-                        <h2>Grand Total</h2>
+                        <h2>Sub Total</h2>
                       </td>
                       <td className="payment">
                         <h2>
@@ -176,10 +176,8 @@ const BillsPage = () => {
               {/*End Table*/}
               <div id="legalcopy">
                 <p className="legal">
-                  <strong>Thank you for your order!</strong> 10% GST application
-                  on total amount.Please note that this is non refundable amount
-                  for any assistance please write email
-                  <b> help@mydomain.com</b>
+                  <strong>Gracias Por Su Orden!</strong> 
+                  <b> help@campusucc.edu.co</b>
                 </p>
               </div>
             </div>
@@ -188,7 +186,7 @@ const BillsPage = () => {
           {/*End Invoice*/}
           <div className="d-flex justify-content-end mt-3">
             <Button type="primary" onClick={handlePrint}>
-              Print
+                Imprimir
             </Button>
           </div>
           {/* ============ invoice modal ends ==============  */}

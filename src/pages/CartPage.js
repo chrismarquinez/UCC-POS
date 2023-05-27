@@ -31,17 +31,17 @@ const CartPage = () => {
     }
   };
   const columns = [
-    { title: "Name", dataIndex: "name" },
+    { title: "Nombre", dataIndex: "name" },
     {
-      title: "Image",
+      title: "Imagen",
       dataIndex: "image",
       render: (image, record) => (
         <img src={image} alt={record.name} height="60" width="60" />
       ),
     },
-    { title: "Price", dataIndex: "price" },
+    { title: "Precio", dataIndex: "price" },
     {
-      title: "Quantity",
+      title: "Cantidad",
       dataIndex: "_id",
       render: (id, record) => (
         <div>
@@ -60,7 +60,7 @@ const CartPage = () => {
       ),
     },
     {
-      title: "Actions",
+      title: "Acciones",
       dataIndex: "_id",
       render: (id, record) => (
         <DeleteOutlined
@@ -106,15 +106,15 @@ const CartPage = () => {
   };
   return (
     <DefaultLayout>
-      <h1>Cart Page</h1>
+      <h1>Carrito De Compras</h1>
       <Table columns={columns} dataSource={cartItems} bordered />
       <div className="d-flex flex-column align-items-end">
         <hr />
         <h3>
-          SUBT TOTAL : $ <b> {subTotal}</b> /-{" "}
+         TOTAL : $ <b> {subTotal}</b> /-{" "}
         </h3>
         <Button type="primary" onClick={() => setBillPopup(true)}>
-          Create Invoice
+          Facturar
         </Button>
       </div>
       <Modal
@@ -133,8 +133,8 @@ const CartPage = () => {
 
           <Form.Item name="paymentMode" label="Payment Method">
             <Select>
-              <Select.Option value="cash">Cash</Select.Option>
-              <Select.Option value="card">Card</Select.Option>
+              <Select.Option value="cash">Efectivo</Select.Option>
+              <Select.Option value="card">Tarjeta</Select.Option>
             </Select>
           </Form.Item>
           <div className="bill-it">
@@ -142,11 +142,11 @@ const CartPage = () => {
               Sub Total : <b>{subTotal}</b>
             </h5>
             <h4>
-              TAX
+              Iva
               <b> {((subTotal / 100) * 10).toFixed(2)}</b>
             </h4>
             <h3>
-              GRAND TOTAL -{" "}
+              Total -{" "}
               <b>
                 {Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))}
               </b>
@@ -154,7 +154,7 @@ const CartPage = () => {
           </div>
           <div className="d-flex justify-content-end">
             <Button type="primary" htmlType="submit">
-              Generate Bill
+              Generar Factura
             </Button>
           </div>
         </Form>

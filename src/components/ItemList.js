@@ -19,7 +19,7 @@ const ItemList = ({ item }) => {
       >
         <Meta title={item.name} />
         <div className="item-button">
-          <Button onClick={() => handleAddTOCart()}>Add to cart</Button>
+          <Button onClick={() => handleAddTOCart()}>Facturar</Button>
         </div>
       </Card>
     </div>
